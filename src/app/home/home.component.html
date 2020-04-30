@@ -1,0 +1,28 @@
+
+
+<nav>
+  <div class="container">
+    <h2>List of products:</h2>
+<div *ngFor="let product of products">
+  <h3>
+    <ng-template
+      *ngIf="isEmployee;then em; else ho">
+    </ng-template>
+
+    <ng-template #em>
+      <a [title]="product.name + ' details'" [routerLink]="'../employee/product/' + product.id">
+        {{ product.name }} from {{ product.brand }}
+      </a>
+    </ng-template>
+
+    <ng-template #ho>
+      <a [title]="product.name + ' details'" [routerLink]="'../product/' + product.id">
+        {{ product.name }} from {{ product.brand }}
+      </a>
+    </ng-template>
+
+  </h3>
+</div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

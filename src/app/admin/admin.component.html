@@ -1,0 +1,13 @@
+<h2>Organization all member:</h2>
+
+<nav>
+<div *ngFor="let position of positions">
+  <h3>
+    <a [title]="position.name + ' details'" [routerLink]="'../position/' + position.id">
+      {{ position.name }}  {{ position.role }}
+    </a>
+  </h3>
+</div>
+
+</nav>
+<router-outlet></router-outlet>
